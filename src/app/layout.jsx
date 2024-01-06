@@ -1,5 +1,6 @@
 import localFont from 'next/font/local'
 import { Providers } from "./providers"
+
 import './globals.css'
 const pt_sans = localFont({
   src: [
@@ -36,7 +37,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={pt_sans.className}>
-        <Providers>{children}</Providers></body>
+        <Providers>
+{children}
+        </Providers>
+      </body>
     </html>
   )
 }

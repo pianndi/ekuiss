@@ -5,14 +5,13 @@ import { KuisStatusCard, KuisBiasa } from "@/components/Card"
 import { InputNormal } from "@/components/Input"
 import SectionTitle from "@/components/SectionTitle"
 import Navbar from "@/components/layouts/Navbar"
-import Navigation from "@/components/layouts/Navigation"
+import { FooterLayout } from "@/components/layouts"
 import { BiDialpad } from "react-icons/bi"
 
 export default function Home() {
   const data = [...Array(6)]
   return (
-    <div className="px-4">
-      <Navbar title={<Image src="/ekuiss.svg" alt="Ekuiss" width={100} height={24} />} />
+    <FooterLayout title={<Image className="max-w-[max-content]" src="/ekuiss.svg" alt="Ekuiss" width={100} height={24} />}>
       <div className="flex justify-between my-2">
         <div className="flex flex-col my-2 font-bold">
           <h1 className="text-xl">Selamat Pagi, Alviandi</h1>
@@ -35,14 +34,19 @@ export default function Home() {
           <KuisStatusCard key={i} />
         )}
       </div>
-      <SectionTitle className="mt-3" title="Kelas Saya" button="Lihat Semua" />
-      <div className="grid grid-cols-2 gap-3">
-        {[...Array(8)].map((d, i) =>
+      <SectionTitle className="mt-4" title="Kelas Saya" button="Lihat Semua" />
+      <div className="grid grid-cols-2 gap-3 mt-2 md:grid-cols-4">
+        {[...Array(4)].map((d, i) =>
           <KuisBiasa key={i} />
         )}
       </div>
-      <Navigation/>
-    </div>
+      <SectionTitle className="mt-4" title="Matematika" button="Lihat Semua" />
+      <div className="grid grid-cols-2 gap-3 mt-2 md:grid-cols-4">
+        {[...Array(4)].map((d, i) =>
+          <KuisBiasa key={i} />
+        )}
+      </div>
+    </FooterLayout>
   )
 }
 // app/page.tsx

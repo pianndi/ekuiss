@@ -22,7 +22,7 @@ module.exports = {
         secondary: "#FFBC9B",
         dark: "#8e1b14",
         bg: {
-          DEFAULT: "#ffffff",
+          DEFAULT: "#fffaf1",
           dark: "#908858"
         },
         gray: {
