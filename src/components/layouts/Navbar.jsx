@@ -1,9 +1,10 @@
 "use client"
 import { MdSearch } from "react-icons/md"
-import { MdHome, MdGroups, MdPerson } from "react-icons/md"
+import { MdHome, MdGroups } from "react-icons/md"
 import { GiBackwardTime } from "react-icons/gi"
+import { GoGear } from "react-icons/go";
+import { MdPerson } from "react-icons/md"
 import { IoMdHelpCircleOutline } from "react-icons/io";
-import { BsGear } from "react-icons/bs";
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { LuMenu } from "react-icons/lu"
@@ -17,26 +18,26 @@ export default function Navbar({ title }) {
       <div className="flex items-center gap-4 py-3">
         <h1 className="text-2xl font-bold">{title}</h1>
         <InputNav placeholder="Cari kuis seru yang tersedia"
-          className="hidden sm:block"
+          className="hidden sm:block "
           endContent={
             <Link href="/search"><MdSearch className="text-2xl" /></Link>
           } />
       </div>
       <div className="items-center font-bold justify-center text-gray text-base hidden sm:flex">
-        <Link href="/" className={"px-6 flex border-primary flex-row items-center gap-2 justify-center hover:text-primary " + (pathname == "/" && "border-b-2 h-full text-primary")}>
+        <Link href="/" className={"h-full px-6 flex border-primary flex-row items-center gap-2 justify-center hover:text-primary " + (pathname == "/" && "border-b-2 text-primary")}>
           <MdHome className="text-2xl" />
           <span className="hidden lg:inline">
             Home
           </span>
 
         </Link>
-        <Link href="/activity" className={"border-primary px-6 flex flex-row items-center justify-center gap-2 hover:text-primary " + (pathname == "/activity" && "border-b-2 h-full text-primary")}>
+        <Link href="/activity" className={"h-full border-primary px-6 flex flex-row items-center justify-center gap-2 hover:text-primary " + (pathname.match(/\/activity*/) && "border-b-2 text-primary")}>
           <GiBackwardTime className="text-2xl" />
           <span className="hidden lg:inline">
             Aktivitas
           </span>
         </Link>
-        <Link href="/class" className={"border-primary px-6 flex flex-row items-center justify-center gap-2 hover:text-primary " + (pathname == "/class" && "border-b-2 h-full text-primary")}>
+        <Link href="/class" className={"h-full border-primary px-6 flex flex-row items-center justify-center gap-2 hover:text-primary " + (pathname == "/class" && "border-b-2 text-primary")}>
           <MdGroups className="text-2xl" />
           <span className="hidden lg:inline">
             Kelas
@@ -48,26 +49,25 @@ export default function Navbar({ title }) {
         <Button size="sm" className="bg-primary font-bold rounded-md text-white text-base">Log in</Button>
         <Dropdown>
           <DropdownTrigger>
-            <button className="text-2xl" type="button"><LuMenu /></button>
+            <button className="text-2xl " type="button"><LuMenu /></button>
           </DropdownTrigger>
           <DropdownMenu variant='solid'>
             <DropdownSection showDivider>
-
-              <DropdownItem key="settings" description="11 DKV 1" startContent={<MdPerson className='text-2xl' />}>
-                <span className="text-base">Alviandi Siswo Hartanto</span>
+              <DropdownItem description='11 DKV 1' key='settings' startContent={<MdPerson className='text-2xl' />}>
+                <span className='text-base'>Alviandi Siswo Hartanto</span>
               </DropdownItem>
             </DropdownSection>
             <DropdownSection>
-              <DropdownItem key="settings" startContent={<BsGear className='text-2xl' />}>
-                <Link className="text-base" href="/settings">Pengaturan</Link>
+              <DropdownItem key='settings' startContent={<GoGear className='text-2xl' />}>
+                <Link href='/settings' className='text-base'>Pengaturan</Link>
               </DropdownItem>
-              <DropdownItem key="help" startContent={<IoMdHelpCircleOutline className='text-2xl' />}>
-                <Link className="text-base" href="/help">Bantuan</Link>
+              <DropdownItem key='help' startContent={<IoMdHelpCircleOutline className='text-2xl' />}>
+                <Link href='/help' className='text-base'>Bantuan</Link>
               </DropdownItem>
             </DropdownSection>
           </DropdownMenu>
         </Dropdown>
       </div>
-    </div>
+    </div >
   )
 }

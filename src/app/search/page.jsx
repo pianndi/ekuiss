@@ -4,6 +4,9 @@ import { FooterLayout } from "@/components/layouts"
 import { InputNormal } from "@/components/Input"
 import { MdSearch } from "react-icons/md"
 
+export const metadata = {
+  title: 'Cari Kuis Seru - Ekuiss',
+}
 export default function searchPage() {
   return (
     <FooterLayout title="Cari">

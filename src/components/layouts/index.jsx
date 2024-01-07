@@ -2,6 +2,12 @@ import Footer from "@/components/layouts/Footer"
 import Navigation from "@/components/layouts/Navigation"
 import Navbar from "@/components/layouts/Navbar"
 
+import { Menu, MenuItem } from '@/components/layouts/Menu'
+import { GiSandsOfTime } from "react-icons/gi";
+import { FaBookBookmark } from "react-icons/fa6";
+import { ImBooks } from "react-icons/im";
+
+
 export const FooterLayout = ({ children, title }) => {
   return (
     <>

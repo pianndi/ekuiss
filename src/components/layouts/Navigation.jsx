@@ -18,7 +18,7 @@ export default function Navigation() {
         <MdSearch className="text-3xl" />
         Cari
       </Link>
-      <Link href="/activity" className={"flex flex-col text-xs items-center justify-center text-gray hover:text-primary " + (path == "/activity" && "text-primary")}>
+      <Link href="/activity" className={"flex flex-col text-xs items-center justify-center text-gray hover:text-primary " + (path.match(/\/activity*/) && "text-primary")}>
         <GiBackwardTime className="text-3xl" />
         Aktivitas
       </Link>
